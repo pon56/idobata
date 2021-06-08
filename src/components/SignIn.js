@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn({setName}) {
+export default function SignIn({}) {
   const classes = useStyles();
 
   const [disabled, setDisabled] = useState(true);
@@ -49,7 +49,7 @@ export default function SignIn({setName}) {
   console.log(string);
 
   useEffect(()=>{
-    const disabled = string !=="";
+    const disabled = string ==="";
     setDisabled(disabled)
     console.log(disabled)
   },[string])
@@ -77,12 +77,15 @@ export default function SignIn({setName}) {
           />
           
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
             disabled={disabled}
+            onClick={()=>{
+                setName(string);
+            }}
           >
             はじめる
           </Button>
