@@ -11,15 +11,19 @@ const useStyles = makeStyles({
     }
 })
 
-const Main = ({name})=>{
+const Main = (props)=>{
+    const {name} = props
+   
     const classes =  useStyles();
+    
+    console.log(name)
+
     return(
         <div className={classes.root}>
-        <MessageList />
-        <MessageListInputField />
+        <MessageList/>
+        <MessageListInputField name={name}/>
         </div>
     )
-
 }
 
 export default Main;
