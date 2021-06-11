@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Avatar } from '@material-ui/core';
 import {gravatarPath} from '../gravater'
 import MessageField from './messageField'
+import MessageSubmitButton from './messageSubmitButton'
 
 const useStyles =  makeStyles({
     root:{
@@ -13,7 +14,8 @@ const useStyles =  makeStyles({
 
 const MessageListInputField = ({name}) =>{
     const Classes = useStyles();
-    const [text, setText] = useState('')
+    const [text, setText] = useState('');
+    console.log(text)
 
     return(
         <div className = {Classes.root}>
@@ -25,7 +27,7 @@ const MessageListInputField = ({name}) =>{
                 <MessageField name={name} setText={setText} text={text}/>
             </Grid>
             <Grid item xs={1}>
-                ボタン
+                <MessageSubmitButton name={name} setText={setText} text={text} />
             </Grid>
         </Grid>
         </div>
