@@ -2,20 +2,30 @@
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 import firebase from 'firebase';
 
+const {
+    REACT_APP_FIREBASE_API_KEY,
+    REACT_APP_FIREBASE_AUTH_DOMAIN,
+    REACT_APP_FIREBASE_PROJECT_ID,
+    REACT_APP_FIREBASE_STORAGE_BUCKET,
+    REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    REACT_APP_FIREBASE_APP_ID,
+    REACT_APP_FIREBASE_MEASUREMENT_ID,
+}=process.env;
+
   const  firebaseConfig = {
-    apiKey: "AIzaSyBeSyNS6mm31hDwenn-1vfTn7kvAuV6etk",
-    authDomain: "idobata-4ca18.firebaseapp.com",
-    projectId: "idobata-4ca18",
-    storageBucket: "idobata-4ca18.appspot.com",
-    messagingSenderId: "621649145195",
-    appId: "1:621649145195:web:1f14deaf8b9adcfe7bf02e",
-    measurementId: "G-Y3N2TMZGXG"
+    apiKey: REACT_APP_FIREBASE_API_KEY,
+    authDomain:  REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: REACT_APP_FIREBASE_APP_ID,
+    measurementId:REACT_APP_FIREBASE_MEASUREMENT_ID,
   };
 
   firebase.initializeApp(firebaseConfig);
   const database = firebase.database();
-  const messageRef = database.ref('messages');
+  const messagesRef = database.ref('messages');
 
 export const pushMessage = ({name, text}) =>{
-      messageRef.push({name, text})
+      messagesRef.push({name, text})
   }

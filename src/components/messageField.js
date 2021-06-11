@@ -6,8 +6,6 @@ const MessageField = ({name, setText, text}) =>{
 
     const [isComposed, setIsComposed] = useState(false);
 
-    console.log(text)
-
     return(
        <TextField fullWidth={true}
            onChange={(e)=>{
