@@ -3,15 +3,15 @@ import {IconButton} from '@material-ui/core'
 import SendIcon from '@material-ui/icons/Send';
 import {pushMessage} from '../fireBase'
 
-const MessageSubmitButton = ({name, setText, text}) =>{
-    console.log(text)
+const MessageSubmitButton = ({inputEl, name, setText, text, }) =>{
 
     return(
         <IconButton 
         disabled={text === ""}
         onClick={()=>{
           pushMessage({name:'erika' , text});
-          setText('')
+          setText('');
+          inputEl.current.focus();
         }}
         
         >
