@@ -2,6 +2,7 @@ import crypto from 'crypto';
 
 export const gravatarPath = (string) =>{
 // 
+    console.log(string)
     const lowerCaseString = string.trim().toLowerCase();
 
     const md5 = crypto.createHash('md5');
